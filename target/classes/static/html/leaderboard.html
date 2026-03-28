@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Smart Reviser</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/html/dashboard.html" class="nav-brand">
+                <span>📚</span>
+                Smart Reviser
+            </a>
+            <div class="nav-links">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/practice_list.html">Practice</a>
+                <a href="/html/daily_task.html">Daily Task</a>
+                <a href="/html/leaderboard.html" class="active">Leaderboard</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>🏆 Global Leaderboard</h1>
+            <p>See how you rank against other learners</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Top Performers</h2>
+                <button class="btn-outline" onclick="loadLeaderboard()" style="padding: 8px 16px; font-size: 14px;">
+                    🔄 Refresh
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Total Score</th>
+                                <th>Level</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardTableBody">
+                            <!-- Leaderboard data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Your Rank Card -->
+        <div class="card" style="margin-top: 24px;">
+            <div class="card-header">
+                <h2 class="card-title">Your Ranking</h2>
+            </div>
+            <div class="card-body">
+                <div class="your-rank" id="yourRank">
+                    <div class="rank-info">
+                        <span class="rank-number" id="yourRankNumber">-</span>
+                        <span class="rank-label">Your Current Rank</span>
+                    </div>
+                    <div class="score-info">
+                        <span class="score-value" id="yourScore">0</span>
+                        <span class="score-label">Total Points</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/analytics.js"></script>
+</body>
+</html>

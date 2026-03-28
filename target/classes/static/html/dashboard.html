@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Reviser</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/html/dashboard.html" class="nav-brand">
+                <span>📚</span>
+                Smart Reviser
+            </a>
+            <div class="nav-links">
+                <a href="/html/dashboard.html" class="active">Dashboard</a>
+                <a href="/html/practice_list.html">Practice</a>
+                <a href="/html/daily_task.html">Daily Task</a>
+                <a href="/html/leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Welcome back, <span id="userName">User</span>! 👋</h1>
+            <p>Track your progress and continue your learning journey</p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Questions Attempted</div>
+                <div class="stat-value" id="totalQuestions">0</div>
+                <div class="stat-change">Keep practicing!</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-label">Accuracy Rate</div>
+                <div class="stat-value" id="accuracyRate">0%</div>
+                <div class="stat-change">Great job!</div>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-label">Current Streak</div>
+                <div class="stat-value" id="currentStreak">0</div>
+                <div class="stat-change">days</div>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-label">Weak Topics</div>
+                <div class="stat-value" id="weakTopicsCount">0</div>
+                <div class="stat-change">Needs improvement</div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Progress Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Your Progress</h2>
+                    <a href="/html/analytics.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="topic-list" id="topicList">
+                        <!-- Topics will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Leaderboard Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Leaderboard</h2>
+                    <a href="/html/leaderboard.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">View All</a>
+                </div>
+                <div class="card-body">
+                    <div class="leaderboard-list" id="leaderboardList">
+                        <!-- Leaderboard will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Quick Actions</h2>
+            </div>
+            <div class="card-body">
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="window.location.href='/html/daily_task.html'">
+                        📝 Start Daily Task
+                    </button>
+                    <button class="btn-outline" onclick="window.location.href='/html/practice_list.html'">
+                        📚 Practice Questions
+                    </button>
+                    <button class="btn-outline" onclick="window.location.href='/html/analytics.html'">
+                        📊 View Analytics
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Task - Smart Reviser</title>
+    <link rel="stylesheet" href="/css/task.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/html/dashboard.html" class="nav-brand">
+                <span>📚</span>
+                Smart Reviser
+            </a>
+            <div class="nav-links">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/practice_list.html">Practice</a>
+                <a href="/html/daily_task.html" class="active">Daily Task</a>
+                <a href="/html/leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>📅 Daily Task</h1>
+            <p>Complete your daily questions to maintain your streak!</p>
+        </div>
+
+        <!-- Progress Banner -->
+        <div class="progress-banner">
+            <div class="progress-info">
+                <h2>Today's Progress</h2>
+                <p><span id="completedCount">0</span> / <span id="totalCount">10</span> questions completed</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Questions Section -->
+        <div class="questions-section" id="questionsSection">
+            <!-- Questions will be loaded here -->
+        </div>
+
+        <!-- Completion Message -->
+        <div class="completion-message" id="completionMessage" style="display: none;">
+            <div class="success-icon">🎉</div>
+            <h2>All Done!</h2>
+            <p>You've completed all your daily questions. Great job!</p>
+            <button class="btn-primary" onclick="window.location.href='/html/dashboard.html'">
+                View Dashboard
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/submission.js"></script>
+</body>
+</html>

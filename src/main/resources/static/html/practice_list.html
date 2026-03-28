@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Questions - Smart Reviser</title>
+    <link rel="stylesheet" href="/css/questions.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/html/dashboard.html" class="nav-brand">
+                <span>📚</span>
+                Smart Reviser
+            </a>
+            <div class="nav-links">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/practice_list.html" class="active">Practice</a>
+                <a href="/html/daily_task.html">Daily Task</a>
+                <a href="/html/leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>📚 Practice Questions</h1>
+            <p>Browse and practice questions by topic and difficulty</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Filter Questions</h2>
+            </div>
+            <div class="card-body">
+                <div class="filter-row">
+                    <div class="form-group">
+                        <label for="filterTopic">Topic</label>
+                        <select id="filterTopic">
+                            <option value="">All Topics</option>
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="SQL">SQL</option>
+                            <option value="Data Structures">Data Structures</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filterDifficulty">Difficulty</label>
+                        <select id="filterDifficulty">
+                            <option value="">All Difficulties</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <button class="btn-primary" onclick="filterQuestions()" style="width: auto; padding: 12px 24px;">
+                            🔍 Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions Grid -->
+        <div class="questions-grid" id="questionsGrid">
+            <!-- Questions will be loaded here -->
+        </div>
+    </div>
+
+    <script src="/js/questions.js"></script>
+</body>
+</html>

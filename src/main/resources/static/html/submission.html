@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Answer - Smart Reviser</title>
+    <link rel="stylesheet" href="/css/task.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/html/dashboard.html" class="nav-brand">
+                <span>📚</span>
+                Smart Reviser
+            </a>
+            <div class="nav-links">
+                <a href="/html/dashboard.html">Dashboard</a>
+                <a href="/html/practice_list.html">Practice</a>
+                <a href="/html/daily_task.html">Daily Task</a>
+                <a href="/html/leaderboard.html">Leaderboard</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>✍️ Submit Your Answer</h1>
+            <p>Choose the correct option and submit</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Question Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Question <span id="questionNumber">1</span></h2>
+                    <div class="question-meta">
+                        <span class="badge" id="questionTopic">Topic</span>
+                        <span class="badge" id="questionDifficulty">Difficulty</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="question-text" id="questionText">
+                        Loading question...
+                    </div>
+
+                    <div class="options-list" id="optionsList">
+                        <!-- Options will be loaded here -->
+                    </div>
+
+                    <div class="submit-section">
+                        <button class="btn-primary" onclick="submitAnswer()" id="submitBtn">
+                            Submit Answer
+                        </button>
+                        <button class="btn-outline" onclick="window.location.href='/html/daily_task.html'">
+                            Skip
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Card -->
+            <div class="card" id="resultCard" style="display: none;">
+                <div class="card-header">
+                    <h2 class="card-title">Result</h2>
+                </div>
+                <div class="card-body">
+                    <div class="result-content" id="resultContent">
+                        <!-- Result will be shown here -->
+                    </div>
+                    <button class="btn-primary" onclick="nextQuestion()" id="nextBtn">
+                        Next Question
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/submission.js"></script>
+</body>
+</html>
